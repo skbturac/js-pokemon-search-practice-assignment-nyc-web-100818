@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     pokemonContainer.addEventListener('click', function(event) {
       if (event.target.dataset.action === 'flip') {
         const clickedPokemon = allPokemonData.find(function(pokemonObjectt) {
-          debugger
           return pokemonObjectt.id == event.target.dataset.id
         })
         if (event.target.src === clickedPokemon.sprites.front) {
