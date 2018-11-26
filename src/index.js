@@ -53,10 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }) //searchBox.addEventListener('input', function(event) ENDS HERE
 
     pokemonContainer.addEventListener('click', function(event) {
-      const clickedPokemon = allPokemonData.find(function(pokemonObjectt) {
-        return pokemonObjectt.id === parseInt(event.target.dataset.id)
-      })
-      console.log(clickedPokemon.sprited.back);
+      if (event.target.dataset.action === 'flip') {
+        const clickedPokemon = allPokemonData.find(function(pokemonObjectt) {
+          debugger
+          return pokemonObjectt.id == event.target.dataset.id
+        })
+        if (event.target.src === clickedPokemon.sprites.front) {
+          event.target.scr = clickedPokemon.sprites.back
+        } else {
+          event.target.scr = clickedPokemon.sprites.front
+        }
+      }
     })
 
 }) //document.addEventListener('DOMContentLoaded', () ENDS HERE
